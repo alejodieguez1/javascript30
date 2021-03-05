@@ -4,34 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drum Kit</title>
+    <title> JS Drum Kit</title>
+    <link rel="stylesheet" href="/javascript30/day1/styles/main.css">
 </head>
 <body>
     <main class="main-content">
         <div class="keys">
             <div data-key="65" class="key">
                 <kbd>A</kbd>
-                <span class="sound">clap</span>
+                <span class="sound">CLAP</span>
             </div>
             <div data-key="83" class="key">
                 <kbd>S</kbd>
-                <span class="sound">hihat</span>
+                <span class="sound">HIHAT</span>
             </div>
             <div data-key="68" class="key">
                 <kbd>D</kbd>
-                <span class="sound">kick</span>
+                <span class="sound">KICK</span>
             </div>
             <div data-key="70" class="key">
                 <kbd>F</kbd>
-                <span class="sound">openhat</span>
+                <span class="sound">OPENHAT</span>
             </div>
-            <div data-key="71" class="key"></div>
-            <div data-key="72" class="key"></div>
-            <div data-key="" class="key"></div>
-            <div data-key="" class="key"></div>
-            <div data-key="" class="key"></div>
-            <div data-key="" class="key"></div>
+            <div data-key="71" class="key">
+                <kbd>G</kbd>
+                <span class="sound">BOOM</span>
+            </div>
+            <div data-key="72" class="key">
+                <kbd>H</kbd>
+                <span class="sound">RIDE</span>
+            </div>
+            <div data-key="74" class="key">
+                <kbd>J</kbd>
+                <span class="sound">SNARE</span>
+            </div>
+            <div data-key="75" class="key">
+                <kbd>K</kbd>
+                <span class="sound">TOM</span>
+            </div>
+            <div data-key="76" class="key">
+                <kbd>L</kbd>
+                <span class="sound">TINK</span>
+            </div>
         </div>
+
+        <audio data-key="65" src="/javascript30/day1/sounds/clap.wav"></audio>
+        <audio data-key="83" src="/javascript30/day1/sounds/hihat.wav"></audio>
+        <audio data-key="68" src="/javascript30/day1/sounds/kick.wav"></audio>
+        <audio data-key="70" src="/javascript30/day1/sounds/openhat.wav"></audio>
+        <audio data-key="71" src="/javascript30/day1/sounds/boom.wav"></audio>
+        <audio data-key="72" src="/javascript30/day1/sounds/ride.wav"></audio>
+        <audio data-key="74" src="/javascript30/day1/sounds/snare.wav"></audio>
+        <audio data-key="75" src="/javascript30/day1/sounds/tom.wav"></audio>
+        <audio data-key="76" src="/javascript30/day1/sounds/tink.wav"></audio>
     </main>
+
+    <script>
+    window.addEventListener('keydown', function(e) {
+        const audio = document.querySelector(`audio[data-key="${e.keycode}"]`);
+        if (!audio) {
+            console.log("fuck");
+        }
+    });        
+    </script>
 </body>
 </html>
